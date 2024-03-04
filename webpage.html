@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kundans Showcase 50%off!!!</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1e1e1e;
+        color: #fff;
+    }
+
+    .header {
+        background-color: #2e2e2e;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header h1 {
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .image-card {
+        background-color: #2e2e2e;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        width: calc(33.33% - 20px);
+        box-sizing: border-box;
+    }
+
+    .image-card img {
+        width: 100%;
+        height: 350px; /* Adjust the height as needed */
+        object-fit: cover; /* Ensures the image covers the entire card */
+        display: block;
+    }
+
+    .image-info {
+        padding: 10px;
+    }
+
+    .image-info h3 {
+        margin-top: 0;
+    }
+
+    .buy-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .buy-button:hover {
+        background-color: #0056b3;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #2e2e2e;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-message {
+        text-align: center;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kundans Showcase 50%off!!!</h1>
+        <div class="copyright">
+            &copy; Hadi
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-card">
+            <img src="img1.jpeg" alt="Image 1">
+            <div class="image-info">
+                <h3>Hussian</h3>
+                <p>Specialist at andi pidikal</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="img2.jpeg" alt="Image 2">
+            <div class="image-info">
+                <h3>Kadar Anan</h3>
+                <p>Lukman</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="img3.jpeg" alt="Image 3">
+            <div class="image-info">
+                <h3>Ghandu</h3>
+                <p>One of the best</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="img4.jpeg" alt="Image 3">
+            <div class="image-info">
+                <h3>Niggga</h3>
+                <p>.</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="img5.jpeg" alt="Image 3">
+            <div class="image-info">
+                <h3>Afro Kundan</h3>
+                <p>Pedo</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="img6.jpeg" alt="Image 3">
+            <div class="image-info">
+                <h3>Glens Baby Boy!</h3>
+                <p></p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="img7.jpeg" alt="Image 3">
+            <div class="image-info">
+                <h3>Kakussss</h3>
+                <p>Esas Dream boi</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        
+        <!-- Add more image cards as needed -->
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-message">
+                <p>Ordered Successfully.</p>
+                <p>Delivery Time: Within 24 Hours</p>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; Hadi
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        var buyButtons = document.querySelectorAll(".buy-button");
+        buyButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                modal.style.display = "block";
+            });
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
